@@ -12,6 +12,7 @@ class Queue {
 	public:
 		//Default constructor
 		Queue() {
+			//TODO: _data() is not a function or a method. It is a list class variable
 			_data();
 			_size = _data.size();
 		}

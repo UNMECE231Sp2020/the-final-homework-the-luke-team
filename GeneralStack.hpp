@@ -60,7 +60,7 @@ class Stack {
 		//This overloaded operator is empty, please implement
 		Stack<T> operator=(const Stack<T> &stack) {
 			stack._data=_data;
-			_size-_data.size();
+			_size=_data.size();
 			return *this;
 		}
 
