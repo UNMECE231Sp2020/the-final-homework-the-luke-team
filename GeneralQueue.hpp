@@ -1,71 +1,65 @@
 #include <iostream>
-//#include "GeneralStack.hpp" 
-//Do not include GeneralList.hpp because 
-//	GeneralStack.hpp already includes it
-//#include "GeneralList.hpp"
+
 
 template <class Q>
 class Queue {
 	private:
 		List<Q> _data;
-		size_t _size;
+		size_t _size;  //QUESTION: uneeded?
 	public:
 		//Default constructor
 		Queue() {
-			//TODO: _data is not a pointer!
-			_data = nullptr;
+		//EDIT: Took out _data here
 		//	_size = _data.size();
 			_size = 0;
 		}
 
 
 		//Copy constructor
-		//TODO: Change List<Q> to Queue
-		Queue(const List<Q> &q){ //List<Q> to Queue
+		Queue(const Queue &q){ //EDIT: chanded List<Q> back to Queue
 			_data = q._data;
-			_size = q._size; //_size to .size()
-		}
+			_size = q._size; 
 
 		//Getters
-		size_t size() const {
+		size_t size() const{
 			return _size;
 		}
 
 
-		Q front() const {
+		Q front() const{
 			return _data.front();
 		}
 
 
-		Q back() const {
+		Q back() const{
 			return _data.back();
 		}
 
 
 		//Push to queue
-		void enqueue(Q value) {
+		void enqueue(Q value){
 			_data.push_front(value);
 			_size = _data.size();
 		}
 
 
 		//Pop from queue
-		void dequeue() {
+		void dequeue(){
 			_data.pop_back();
 			_size = _data.size();
 		}
 
-		void print() {
+		void print(){
 			_data.print();
 		}
 
 
-		bool search(Q value) {
+		bool search(Q value){
 			return _data.search(value);
 		}
 
 
-		bool empty() {
+		bool empty(){
 			return _data.empty();
 		}
 
