@@ -1,8 +1,8 @@
 #include <iostream>
-#include "GeneralStack.hpp"
+//#include "GeneralStack.hpp" 
 //Do not include GeneralList.hpp because 
 //	GeneralStack.hpp already includes it
-/*#include "GeneralList.hpp"*/
+//#include "GeneralList.hpp"
 
 template <class Q>
 class Queue {
@@ -12,16 +12,16 @@ class Queue {
 	public:
 		//Default constructor
 		Queue() {
-			//TODO: _data() is not a function or a method. It is a list class variable
-			_data();
-			_size = _data.size();
+			_data = nullptr;
+		//	_size = _data.size();
+			_size = 0;
 		}
 
 
 		//Copy constructor
-		Queue(const Queue &q){
+		Queue(const List<Q> &q){ //List<Q> to Queue
 			_data = q._data;
-			_size = q.size();
+			_size = q._size; //_size to .size()
 
 		//Getters
 		size_t size() const{
@@ -70,6 +70,7 @@ class Queue {
 		Queue<Q> operator=(const Queue<Q> q) {
 			_data = q._data;
 			_size = _data.size();
+			return *this; //added this line
 		}
 
 		template <class U>
@@ -84,6 +85,7 @@ class Queue {
 		friend bool operator!=(const Queue<U> &left_queue, 
 				const Queue<U> &right_queue);
 };
+/*
 template <class U> std::ostream &operator<<(std::ostream &out, const Queue<U> &q){
 	out << q._data;
 	return out;
@@ -106,3 +108,4 @@ template <class U> bool operator !=(const Queue<U> &left_side, const Queue<U> &r
 		return true;
 	}
 }
+*/

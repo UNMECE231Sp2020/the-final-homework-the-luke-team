@@ -58,15 +58,13 @@ class List {
 		}
 
 		List &operator=(const List &x){
-			//TODO: This should be 'size = x.size();'
-			size = x.size;
+			size = x.size();
 			Dlist *tempe;
-			//TODO: front should be _front
+			_front = tempe;
 			for(tempe = x.front; tempe!=nullptr; tempe = tempe -> next){
 				push_back(tempe->value);
 			}
-			//TODO: push_back handles what you are trying to do in the next line, get rid of the next line
-			back=tempe;
+			
 			return *this;
 
 		}//overload = operator

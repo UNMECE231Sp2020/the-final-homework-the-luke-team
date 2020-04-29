@@ -60,7 +60,7 @@ class Stack {
 		//This overloaded operator is empty, please implement
 		Stack<T> operator=(const Stack<T> &stack) {
 			stack._data=_data;
-			_size=_data.size();
+			_size-_data.size();
 			return *this;
 		}
 
@@ -72,6 +72,7 @@ class Stack {
 		friend bool operator!=(const Stack<S> &left_side, const Stack<S> &right_side);
 
 };
+/*
 template <class S> std::ostream &operator<<(std::ostream &out, const Stack<S> &stack){
 	out <<stack._data;
 	return out;
@@ -95,4 +96,4 @@ template <class S> bool operator !=(const Stack<S> &left_side, const Stack<S> &r
 	}
 }
 
-
+*/
