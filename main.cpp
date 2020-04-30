@@ -17,7 +17,7 @@ int main() {
 	s.push(8.03);
 	s.push(9.12);
 
-	std::cout << std::endl << s << std::endl;
+	//std::cout << std::endl << s << std::endl;
 	std::cout << "Top of the stack: " << s.top() << std::endl;
 
 	Stack<double> s2(s);
@@ -40,6 +40,7 @@ int main() {
 	que.print();
 
 	Queue<int> quoi(que);
+	/*
 	quoi.dequeue();
 	quoi.enqueue(12);
 	quoi.enqueue(21);
@@ -54,6 +55,7 @@ int main() {
 	else {
 		std::cout << search_term << " is not in the queue" << std::endl;
 	}
+	*/
 
 	return 0;
 }

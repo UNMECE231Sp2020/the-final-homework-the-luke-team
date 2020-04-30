@@ -1,11 +1,11 @@
 #include <iostream>
 
-
 template <class Q>
 class Queue {
 	private:
 		List<Q> _data;
 		size_t _size;  //QUESTION: uneeded?
+				//Answer: no, it is needed
 	public:
 		//Default constructor
 		Queue() {
@@ -19,9 +19,11 @@ class Queue {
 		Queue(const Queue &q){ //EDIT: chanded List<Q> back to Queue
 			_data = q._data;
 			_size = q._size; 
+		//TODO: Filled in a missing } for you, it caused a lot of trouble haha
+		}
 
 		//Getters
-		size_t size() const{
+		size_t size() const {
 			return _size;
 		}
 
@@ -64,6 +66,7 @@ class Queue {
 		}
 
 
+		//TODO: Get rid of <Q>!
 		Queue<Q> operator=(const Queue<Q> q) {
 			_data = q._data;
 			_size = _data.size();
