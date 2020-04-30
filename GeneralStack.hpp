@@ -58,8 +58,7 @@ class Stack {
 		}
 
 		//This overloaded operator is empty, please implement
-		//TODO: Get rid of <T> is is not needed at all
-		Stack<T> operator=(const Stack<T> &stack) {
+		Stack operator=(const Stack &stack) { //EDIT: got rid of both instances of '<T>'
 			stack._data=_data;
 			_size-_data.size();
 			return *this;
@@ -73,7 +72,7 @@ class Stack {
 		friend bool operator!=(const Stack<S> &left_side, const Stack<S> &right_side);
 
 };
-/*
+
 template <class S> std::ostream &operator<<(std::ostream &out, const Stack<S> &stack){
 	out <<stack._data;
 	return out;
@@ -97,4 +96,4 @@ template <class S> bool operator !=(const Stack<S> &left_side, const Stack<S> &r
 	}
 }
 
-*/
+

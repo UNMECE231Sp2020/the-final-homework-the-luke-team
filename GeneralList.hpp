@@ -58,14 +58,10 @@ class List {
 		}
 
 		List &operator=(const List &x){
-			//TODO: Line below is not needed because push_back takes care of size
-			//size = x.size();
-			Dlist *tempe;
-			//TODO: Line below messes up your linked list because you point the front to somewhere else
-			//_front = tempe;
 
-			//TODO: front is not an attribute, _front is
-			for(tempe = x.front; tempe!=nullptr; tempe = tempe -> next){
+			Dlist *tempe;
+			
+			for(tempe = x._front; tempe!=nullptr; tempe = tempe -> next){
 				push_back(tempe->value);
 			}
 			

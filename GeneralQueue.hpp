@@ -1,29 +1,26 @@
 #include <iostream>
 
+
 template <class Q>
 class Queue {
 	private:
 		List<Q> _data;
-		size_t _size;  //QUESTION: uneeded?
-				//Answer: no, it is needed
+		size_t _size;  
 	public:
 		//Default constructor
 		Queue() {
-		//EDIT: Took out _data here
-		//	_size = _data.size();
 			_size = 0;
 		}
 
 
 		//Copy constructor
-		Queue(const Queue &q){ //EDIT: chanded List<Q> back to Queue
+		Queue(const Queue &q){ 
 			_data = q._data;
 			_size = q._size; 
-		//TODO: Filled in a missing } for you, it caused a lot of trouble haha
 		}
 
 		//Getters
-		size_t size() const {
+		size_t size() const{
 			return _size;
 		}
 
@@ -66,11 +63,10 @@ class Queue {
 		}
 
 
-		//TODO: Get rid of <Q>!
-		Queue<Q> operator=(const Queue<Q> q) {
+		Queue operator=(const Queue q) { //EDIT: Got rid of both instances of '<Q>'
 			_data = q._data;
 			_size = _data.size();
-			return *this; //added this line
+			return *this; 
 		}
 
 		template <class U>
@@ -85,7 +81,7 @@ class Queue {
 		friend bool operator!=(const Queue<U> &left_queue, 
 				const Queue<U> &right_queue);
 };
-/*
+
 template <class U> std::ostream &operator<<(std::ostream &out, const Queue<U> &q){
 	out << q._data;
 	return out;
@@ -108,4 +104,4 @@ template <class U> bool operator !=(const Queue<U> &left_side, const Queue<U> &r
 		return true;
 	}
 }
-*/
+
